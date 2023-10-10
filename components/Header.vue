@@ -1,23 +1,16 @@
 <template>
-  <v-app-bar style="height: 65px; background-color: rgb(241, 236, 236)">
+  <v-app-bar style="height: 56px; background-color: rgb(241, 236, 236)">
     <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <v-app-bar-title>
-      <img height="auto" width="150px" src="../assets/logo.png" />
+      <img height="auto" width="140px" src="../assets/logo.png" />
     </v-app-bar-title>
     <v-spacer></v-spacer>
     <!-- Filtro Aqui Encima-->
-    <v-text-field
-      style="margin-top: 23px"
-      placeholder="Pesquisa"
-      bg-color="white"
-      variant="outlined"
-    >
-      <v-icon icon="mdi-magnify"></v-icon
-    ></v-text-field>
+    <Input_filter />
     <v-spacer></v-spacer>
     <v-btn icon="mdi-theme-light-dark"></v-btn>
-    <v-btn stacked>
-      <v-badge color="error" dot
+    <v-btn style="height: 40px; width: 10px; font-size: 20px">
+      <v-badge color="rgb(244, 16, 0)" dot
         ><v-icon icon="mdi-bell-outline"></v-icon></v-badge
     ></v-btn>
     <!-- Componente Do Perfil de Usúario  -->
@@ -25,7 +18,7 @@
   </v-app-bar>
   <v-card>
     <v-navigation-drawer
-      style="background-color: rgb(231, 229, 229); width: 228px"
+      style="height: 100%; background-color: rgb(229, 231, 231); width: 228px"
       floating
       permanent
       v-model="drawer"
@@ -35,7 +28,8 @@
           prepend-icon="mdi-chart-bar"
           value="dashboard"
           title="Dashboard"
-        ></v-list-item>
+        >
+        </v-list-item>
         <v-list-item
           prepend-icon="mdi-phone-plus-outline"
           value="atendimento"
@@ -86,6 +80,7 @@
       </v-list>
       <div
         style="
+        top: 75px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -107,8 +102,15 @@ const drawer = ref(false);
 </script>
 
 <style scoped>
+
+ .v-list-item__prepend , .v-list-item__spacer  {
+
+
+width: 12px;
+}
+
 .img_logonpx {
-  width: 130px;
+  width: 120px;
   height: auto;
   justify-content: end;
 }
@@ -122,7 +124,7 @@ const drawer = ref(false);
 }
 .v-list-item--nav {
   padding-inline-start: 8px;
-  /* padding-inline-end: 8px; */
+  padding-inline-end: 18px;
 }
 
 .v-list-item--active:focus {

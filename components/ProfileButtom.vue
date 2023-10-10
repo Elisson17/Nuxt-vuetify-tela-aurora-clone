@@ -2,6 +2,7 @@
   <v-menu>
     <template v-slot:activator="{ props }">
       <v-btn
+      style="font-size: 12px;"
         v-bind="props"
         prepend-icon="mdi-account"
         append-icon="mdi-chevron-down"
@@ -19,4 +20,6 @@
 
 <script setup></script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
